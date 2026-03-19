@@ -79,42 +79,67 @@
 
 ## 🧮 DAX расчёты
 
+### Salary Row (KZT) для расчета
+```
+Salary Row (KZT) = 
+VAR FromVal = 'final_df'[Зарплата От]
+VAR ToVal = 'final_df'[Зарплата До]
+VAR Rate = COALESCE('final_df'[Rate_Column], 1)
+
+VAR RowSalary =
+    IF(
+        NOT ISBLANK(FromVal) && NOT ISBLANK(ToVal),
+        (FromVal + ToVal) / 2,
+        COALESCE(FromVal, ToVal)
+    )
+
+RETURN RowSalary * Rate
+```
+
 ### Средняя зарплата (с учётом валюты)
 
 ```DAX
-Зарплата средняя (KZT) =
+Зарплата средняя (KZT) = 
+AVERAGE('final_df'[Salary Row (KZT)])
+```
+
+### Зарплата до (KZT)
+```DAX
+Зарплата до (KZT) = 
 AVERAGEX(
-    'final_df',
-    VAR FromVal = 'final_df'[Зарплата От]
-    VAR ToVal = 'final_df'[Зарплата До]
-    VAR Rate = COALESCE('final_df'[Rate_Column], 1)
-
-    VAR RowSalary =
-        IF(
-            NOT ISBLANK(FromVal) && NOT ISBLANK(ToVal),
-            (FromVal + ToVal) / 2,
-            COALESCE(FromVal, ToVal)
-        )
-
-    RETURN RowSalary * Rate
+    FILTER(
+        'final_df',
+        NOT ISBLANK('final_df'[Зарплата До])
+    ),
+    'final_df'[Зарплата От] * COALESCE('final_df'[Rate_Column], 1)
 )
 ```
+### Зарплата от (KZT)
+```
+Зарплата от (KZT) = 
+AVERAGEX(
+    FILTER(
+        'final_df',
+        NOT ISBLANK('final_df'[Зарплата От])
+    ),
+    'final_df'[Зарплата От] * COALESCE('final_df'[Rate_Column], 1)
 )
+```
 
 📌 Особенности:
 
-учитывает валютный курс
+- учитывает валютный курс
 
-корректно обрабатывает вилки зарплат
+- корректно обрабатывает вилки зарплат
 
-зависит от фильтров (город, роль, опыт)
+- зависит от фильтров (город, роль, опыт)
 
 🔍 Инсайты
 
-Наибольший спрос на аналитиков наблюдается в крупных городах
+- Наибольший спрос на аналитиков наблюдается в крупных городах
 
-Вакансии BI-аналитиков имеют более высокий уровень зарплат
+- Вакансии BI-аналитиков имеют более высокий уровень зарплат
 
-Наблюдается рост количества вакансий во времени
+- Наблюдается рост количества вакансий во времени
 
-Не все вакансии содержат информацию о зарплате
+- Не все вакансии содержат информацию о зарплате
