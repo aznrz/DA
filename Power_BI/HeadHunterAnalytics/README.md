@@ -97,10 +97,9 @@ AVERAGEX(
         )
 
     RETURN RowSalary * Rate
-)```
-
-
-
+)
+```
+)
 
 📌 Особенности:
 
