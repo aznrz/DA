@@ -79,7 +79,7 @@
 
 ## 🧮 DAX расчёты
 
-### Salary Row (KZT) для расчета
+### 1. Salary Row (KZT) для расчета
 ```
 Salary Row (KZT) = 
 VAR FromVal = 'final_df'[Зарплата От]
@@ -96,14 +96,14 @@ VAR RowSalary =
 RETURN RowSalary * Rate
 ```
 
-### Средняя зарплата (с учётом валюты)
+### 2. Средняя зарплата (с учётом валюты)
 
 ```DAX
 Зарплата средняя (KZT) = 
 AVERAGE('final_df'[Salary Row (KZT)])
 ```
 
-### Зарплата до (KZT)
+### 3. Зарплата до (KZT)
 ```DAX
 Зарплата до (KZT) = 
 AVERAGEX(
@@ -114,7 +114,7 @@ AVERAGEX(
     'final_df'[Зарплата От] * COALESCE('final_df'[Rate_Column], 1)
 )
 ```
-### Зарплата от (KZT)
+### 4. Зарплата от (KZT)
 ```
 Зарплата от (KZT) = 
 AVERAGEX(
@@ -124,6 +124,12 @@ AVERAGEX(
     ),
     'final_df'[Зарплата От] * COALESCE('final_df'[Rate_Column], 1)
 )
+```
+
+### 5. Зарплата Медиана (KZT)
+```
+Зарплата Медиана (KZT) = 
+MEDIAN('final_df'[Salary Row (KZT)])
 ```
 
 📌 Особенности:
