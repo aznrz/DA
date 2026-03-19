@@ -1,0 +1,13 @@
+📦 hh-analytics-powerbi
+ ┣ 📂 data
+ ┃ ┗ sample_data.csv (если можно)
+ ┣ 📂 scripts
+ ┃ ┗ hh_api_parser.py
+ ┣ 📂 powerbi
+ ┃ ┗ HeadHunter_Analytics.pbix
+ ┣ 📂 images
+ ┃ ┣ dashboard_overview.png
+ ┃ ┣ filters.png
+ ┃ ┗ trends.png
+ ┣ 📜 README.md
+ ┗ 📜 requirements.txt
