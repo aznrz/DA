@@ -97,7 +97,7 @@ AVERAGEX(
         )
 
     RETURN RowSalary * Rate
-)
+)```
 
 
 
