@@ -50,3 +50,4 @@
 ```DAX
 Кол-во сотрудников =
 DISTINCTCOUNT(HR_Analytics_excel[EmpID])
+```
