@@ -24,11 +24,8 @@
 ## 🛠️ Стек технологий
 
 - **Power BI** (DAX, Data Modeling)  
-- **Power Query (M)** — трансформация данных  
-- **SQL (PostgreSQL)** — хранение данных  
+- **Power Query (M)** — трансформация данных    
 - **Excel / CSV** — источник данных  
-- **SharePoint** — хранение и доступ к данным  
-- **Power Automate** — автоматизация обновлений  
 
 ---
 
