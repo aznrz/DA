@@ -99,8 +99,8 @@
 * REST API
 * Agile / Scrum
 * Tableau
-* DWH / ETL
-* PostgreSQL
+* DWH / ETL/ELT
+* PostgreSQL/MSSQL
 
 ### 💡 Вывод:
 
