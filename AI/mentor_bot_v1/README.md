@@ -56,8 +56,8 @@ pip install -r requirements.txt
 TELEGRAM_TOKEN=ваш_токен_от_BotFather
 OLLAMA_URL=http://localhost:11434/api/chat
 MODEL_NAME=mistral
-Важно: Файл .env добавлен в .gitignore и не должен публиковаться в открытом доступе.
 ```
+Важно: Файл .env добавлен в .gitignore и не должен публиковаться в открытом доступе.
 
 4. Запустите бота
 
