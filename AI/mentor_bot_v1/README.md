@@ -69,4 +69,4 @@ requirements.txt — список необходимых Python-библиоте
 .gitignore — список файлов, исключаемых из репозитория.
 
 👨‍💻 Автор
-Aziz Nazarov — Senior BI Analyst.
+Nazarov — BI Analyst.
