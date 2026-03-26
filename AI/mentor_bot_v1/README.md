@@ -45,3 +45,30 @@
 
 ```
 pip install -r requirements.txt
+
+```
+
+### 3. Настройте переменные окружения
+Создайте файл .env на основе .env.example:
+
+Фрагмент кода
+```
+TELEGRAM_TOKEN=ваш_токен_от_BotFather
+OLLAMA_URL=http://localhost:11434/api/chat
+MODEL_NAME=mistral
+Важно: Файл .env добавлен в .gitignore и не должен публиковаться в открытом доступе.
+```
+
+4. Запустите бота
+
+```
+Bash
+python bot.py
+📁 Структура проекта
+bot.py — основной код бота и интеграция с Ollama API.
+
+requirements.txt — список необходимых Python-библиотек.
+
+.env.example — шаблон для конфигурации бота.
+
+.gitignore — список файлов, исключаемых из репозитория.
